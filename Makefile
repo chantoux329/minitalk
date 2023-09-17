@@ -6,7 +6,7 @@
 #    By: chkala-l <chkala-l@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 17:38:43 by chkala-l          #+#    #+#              #
-#    Updated: 2023/09/12 17:59:16 by chkala-l         ###   ########.fr        #
+#    Updated: 2023/09/17 19:27:29 by chkala-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ CFLAGS += -Wall -Werror -Wextra
 RM = rm -f
 
 SRC = client.c \
-	  server.c
+	  server.c\
+	  utils.c\
 
 
 Obj = $(SRC:.c=.o)
@@ -29,10 +30,10 @@ Obj = $(SRC:.c=.o)
 # $(NAME): $(Obj)
 # 	ar rcs $(NAME) $(Obj)
 client : client.c
-		$(CC) $(CFLAGS) client.c -o $(NAME_c)
+		$(CC) $(CFLAGS) client.c utils.c -o $(NAME_c)
 		
 server : server.c
-		$(CC) $(CFLAGS) server.c -o $(NAME_s)
+		$(CC) $(CFLAGS) server.c utils.c -o $(NAME_s)
 
 all : $(NAME_s) $(NAME_c)
 

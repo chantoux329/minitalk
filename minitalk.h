@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chkala-l <chkala-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 17:38:57 by chkala-l          #+#    #+#             */
-/*   Updated: 2023/09/17 19:25:02 by chkala-l         ###   ########.fr       */
+/*   Created: 2023/09/17 19:15:47 by chkala-l          #+#    #+#             */
+/*   Updated: 2023/09/17 19:18:36 by chkala-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#ifndef MINITALK_H
+# define MINITALK_H
+#include <unistd.h>
+#include <sys/types.h>
+#include <stdio.h>
 
-int	main(int argc, char **argv)
-{
-	int	i;
+char	*ft_putstr(char *str);
 
-	(void)argv;
-	if (argc != 3)
-	{
-		ft_putstr("error: nb argument incorrect\n");
-		return (1);
-	}
-	i = 0;
-	while (argv[1][i] != '\0')
-	{
-		if (argv[1][i] < '0' || argv[1][i] > '9')
-		{
-			ft_putstr("PID incorret\n");
-			return (1);
-		}
-		i++;
-	}
-	return (0);
-}
+#endif

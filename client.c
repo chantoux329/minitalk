@@ -6,7 +6,7 @@
 /*   By: chkala-l <chkala-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:38:57 by chkala-l          #+#    #+#             */
-/*   Updated: 2023/09/23 01:06:58 by chkala-l         ###   ########.fr       */
+/*   Updated: 2023/09/23 01:44:48 by chkala-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,16 @@ int	msg_errors(int argc, char **argv)
 	if (argc != 3)
 	{
 		ft_putstr("error: nb argument incorrect\n");
-		return (1);
 		exit(EXIT_FAILURE);
 	}
-	if (ft_isdigit(argv[1]) == 0)
+	if (ft_isdigit(argv[1]) == 1)
 	{
 		ft_putstr("wrong PID");
-		return (1);
 		exit(EXIT_FAILURE);
 	}
 	if (argv[2] == NULL)
 	{
 		ft_putstr("no string to send");
-		return (1);
 		exit(EXIT_FAILURE);
 	}
 	else
